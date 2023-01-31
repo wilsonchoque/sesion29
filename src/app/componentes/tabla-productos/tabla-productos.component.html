@@ -1,0 +1,22 @@
+
+<table class="table table-striped">
+    <thead>
+      <tr  class="text-center">        
+        <th scope="col">CODIGO</th>
+        <th scope="col">DESCRIPCION</th>        
+        <th scope="col">PRECIO</th>
+        <th scope="col">ELIMINAR</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="text-center" *ngFor="let producto of listaProductos , index as i  ">        
+        <td>{{producto.codPro}}</td>
+        <td>{{producto.descripcion}}</td>        
+        <td>{{producto.precio}}</td>
+        <td><button class="btn btn-danger" (click)="eliminarProducto(producto)"><i class="fa-solid fa-trash-can"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="container py-3">
+    <p class="fw-bold">Total de registros: {{listaProductos.length}}</p>
+  </div>
